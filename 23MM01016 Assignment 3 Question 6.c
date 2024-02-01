@@ -1,31 +1,49 @@
 #include <stdio.h>
-#include <math.h>
 
-int main() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    long long square = (long long)num * num;
-    int numDigits = 0;
+int main()
+{
+    int num,square,digits;
+    printf("Enter the number");
+    scanf("%d",&num);
+    square=num*num;
+    int temp=square;
+    digits=0;
+    while(temp>0){
+        temp=temp/10;
+        digits++;
+    }
+    printf("Digits:%d\n",digits);
     
-    long long i = square;
-    while (i != 0) {
-        i /= 10;
-        numDigits++;
+    int divisor = 1;
+    for (int i = 0; i < (digits/2); i++) {
+        divisor *= 10;
     }
-
-    int rightDigits = numDigits / 2;
-    long long divisor = pow(10, rightDigits);
-    long long part1 = square / divisor;
-    long long part2 = square % divisor;
-
-    if (part1 + part2 == num) {
-        printf("%d is a Kaprekar Number\n", num);
+     if (digits % 2 != 0) {
+        
+        divisor *= 10;
     }
-    else {
-        printf("%d is not a Kaprekar Number\n", num);
-    }
+    printf("divisor:%d\n",divisor);
+    int n1 = square / divisor;
+    int n2 = square % divisor;
 
-    printf("The square is %lld",square);
+    if(n1+n2==num){
+        printf("It is a Kaprekar Number.");
+    }
+        
+    else{
+        printf("It is not a Kaprekar Number");
+    }
     return 0;
-}
+
+
+
+
+    
+
+
+
+
+
+   
+
+
