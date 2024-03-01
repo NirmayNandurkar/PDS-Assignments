@@ -12,13 +12,6 @@ int main()
         digits[i] = num % 10;
         num /= 10;
     }
-
-    if (num < 1000 || num > 10000)
-    {
-        printf("Entered number is not a 4 digit number.");
-    }
-    else{
-
     
     for(int i = 0; i < 4; i++)
     {
@@ -37,7 +30,7 @@ int main()
            }
         }
     }
-}
+
     
 
 return 0;
