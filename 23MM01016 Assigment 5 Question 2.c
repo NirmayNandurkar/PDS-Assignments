@@ -1,17 +1,19 @@
 #include<stdio.h>
 void main()
 {
-    int num,div,i,c=0;
+    int divi,divr,i,q=0, r;
     printf("Enter the dividend:- \n");
-    scanf("%d",&num);
+    scanf("%d",&divi);
     printf("Enter the divisor:- \n");
-    scanf("%d",&div);
-    for(i=div;i <= num;i =i + div)
+    scanf("%d",&divr);
+    while(divi >= 0)
     {
-    c++;
+        divi -= divr;
+        q++;
+        r = divi;
     }
-    printf("Quotient= %d\n",c);
-    printf("Remainder: %d",(num-i+div));
+    printf("Quotient :- %d\n",q);
+    printf("Remainder :- %d",(r + divr));
 
     return 0;
 
