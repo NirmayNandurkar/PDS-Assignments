@@ -9,13 +9,13 @@ int main()
     char arr[n],ch;
     for(i = 0;i < n; i++)
     {
-        printf("Enter the character:- \n");
+        printf("Enter the character %d:- \n", i + 1);
         scanf(" %c",&arr[i]);
     }
-    printf("%d",i);
+    printf("%d\n",i);
     for(i = 0;i < n; i++)
-    printf("%c",arr[i]);
-    printf("Enter the word to be made :\n");
+    printf("%c ",arr[i]);
+    printf("\nEnter the word to be made :\n");
     scanf("%s",&word);
     int length= strlen(word);
     for(i=0;i<length;i++)
