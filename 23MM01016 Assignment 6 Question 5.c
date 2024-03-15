@@ -1,56 +1,42 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void transpose(int originalMatrix[rows][cols], int transposedMatrix[cols][rows], int rows, int cols)
-{
-    for(int i = 0; i < rows; i++)
-    {
-        for(int j = 0; j < cols; j++)
-        {
-            transposedMatrix [j][i] = originalMatrix[i][j];
+
+void transposeandprint(int mat[10][10], int rows, int cols) {
+    int transpose_mat[10][10];
+    int i, j;
+
+    for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+            transpose_mat[i][j] = mat[j][i];
         }
+    }
+
+    printf("Transpose of the matrix:- \n");
+    for (i = 0; i < cols; i++) {
+        for (j = 0; j < rows; j++) {
+            printf("%d\t", transpose_mat[i][j]);
+        }
+        printf("\n");
     }
 }
 
-int main()
-{
-    int rows, cols;
+int main() {
+    int mat[10][10];
+    int rows, cols, i, j;
 
-    printf("Enter the number of rows and columns in the matrix:- \n");
+    printf("Enter the number of rows and columns of the matrix:- \n");
     scanf("%d %d", &rows, &cols);
 
-    int originalMatrix[rows][cols], transposedMatrix[cols][rows];
-
-    for(int i = 0; i < rows; i++)
-    {
-        for(int j = 0; j < cols; j++)
+    
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) 
         {
-            printf("Enter [%d][%d] element of the matrix:- \n", i + 1, j + 1);
-            scanf("%d", &originalMatrix[i][j]);
+            printf("Enter the elements [%d][%d] of the matrix:\n", i + 1, j + 1);
+            scanf("%d", &mat[i][j]);
         }
     }
 
-    transpose(originalMatrix, transposedMatrix, rows, cols);
-
-    printf("Original Matrix:- \n");
-    for(int i = 0; i < rows; i++)
-    {
-        for(int j = 0; j < cols; j++)
-        {
-            printf("%d\t", originalMatrix[i][j]);
-        }
-        printf("\n");
-    }
-
-    printf("Transposed Matrix:- \n");
-    for(int i = 0; i < rows; i++)
-    {
-        for(int j = 0; j < cols; j++)
-        {
-            printf("%d\t", transposedMatrix[i][j]);
-        }
-        printf("\n");
-    }
+    transposeandprint(mat, rows, cols);
 
     return 0;
-
 }
