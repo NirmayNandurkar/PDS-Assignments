@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-#define MAX_ROW 10
-#define MAX_COL 10
-
-void matrix_multiplication(int mat1[][MAX_COL], int rows1, int cols1, int mat2[][MAX_COL], int rows2, int cols2, int result[][MAX_COL]) {
+void matrix_multiplication(int mat1[10][10], int rows1, int cols1, int mat2[10][10], int rows2, int cols2, int result[10][10]) {
     int i, j, k;
 
     for (i = 0; i < rows1; i++) {
@@ -16,18 +13,18 @@ void matrix_multiplication(int mat1[][MAX_COL], int rows1, int cols1, int mat2[]
     }
 }
 
-void print_matrix(int mat[][MAX_COL], int rows, int cols) {
+void print_matrix(int mat[10][10], int rows, int cols) {
     int i, j;
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            printf("%d ", mat[i][j]);
+            printf("%d\t", mat[i][j]);
         }
         printf("\n");
     }
 }
 
 int main() {
-    int mat1[MAX_ROW][MAX_COL], mat2[MAX_ROW][MAX_COL], result[MAX_ROW][MAX_COL];
+    int mat1[10][10], mat2[10][10], result[10][10];
     int rows1, cols1, rows2, cols2;
 
     printf("Enter the number of rows and columns for matrix 1: ");
