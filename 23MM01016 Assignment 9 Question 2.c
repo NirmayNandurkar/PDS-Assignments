@@ -29,20 +29,24 @@ int main() {
     for (int i = 0; i < 6; ++i) {
         printf("Enter details for student %d:\n", i + 1);
         
-        printf("Roll No: ");
+        printf("Roll No:-");
         scanf("%d", &students[i].rollNo);
+        fflush(stdin);
         
-        printf("Name: ");
-        scanf("%s", &students[i].name);
+        printf("Name:-");
+        scanf(" %s", &students[i].name);
+        fflush(stdin);
 
-        printf("Address: ");
+        printf("Address:-");
         scanf("%s", &students[i].address);
+        fflush(stdin);
 
-        printf("Age: ");
+        printf("Age:-");
         scanf("%d", &students[i].age);
 
-        printf("Average Marks: ");
+        printf("Average Marks:-");
         scanf("%f", &students[i].avgMarks);
+        fflush(stdin);
     }
 
    
