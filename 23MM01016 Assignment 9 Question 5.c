@@ -29,18 +29,23 @@ int main() {
   
     printf("Enter first name: ");
     scanf("%s", record.firstName);
+    fflush(stdin);
 
     printf("Enter last name: ");
     scanf("%s", record.lastName);
+    fflush(stdin);
 
     printf("Enter roll number: ");
     scanf("%d", &record.rollNumber);
+    fflush(stdin);
 
     printf("Enter department: ");
-    scanf("%s", record.department);
+    scanf("%s", record.department);\
+    fflush(stdin);
 
     printf("Enter course code: ");
     scanf("%s", record.courseCode);
+    fflush(stdin);
 
     printf("Enter test marks for 3 tests:\n");
     for (int i = 0; i < 3; ++i) 
