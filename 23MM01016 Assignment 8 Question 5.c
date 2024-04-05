@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-void right_rotate_matrix(int mat[10][10], int rows, int cols, int n) {
+void right_rotate_matrix(int *mat, int rows, int cols, int n) {
     int temp;
     for (int k = 0; k < n; k++) {
         for (int i = 0; i < rows; i++) {
-            temp = mat[i][cols - 1];
+            temp = *((mat + i * cols) + cols - 1);
             for (int j = cols - 1; j > 0; j--) {
-                mat[i][j] = mat[i][j - 1];
+                *((mat + i * cols) + j) = *((mat + i * cols) + j - 1);
             }
-            mat[i][0] = temp;
+            *((mat + i * cols) + 0) = temp;
         }
     }
 }
 
-void print_matrix(int mat[10][10], int rows, int cols) {
+void print_matrix(int *mat, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            printf("%d\t", mat[i][j]);
+            printf("%d\t", *((mat + i * cols) + j));
         }
         printf("\n");
     }
@@ -47,12 +47,12 @@ int main() {
     scanf("%d", &n);
 
     printf("\nOriginal Matrix:\n");
-    print_matrix(mat, rows, cols);
+    print_matrix(&mat[0][0], rows, cols);
 
-    right_rotate_matrix(mat, rows, cols, n);
+    right_rotate_matrix(&mat[0][0], rows, cols, n);
 
     printf("\nMatrix after right rotation %d times:\n", n);
-    print_matrix(mat, rows, cols);
+    print_matrix(&mat[0][0], rows, cols);
 
     return 0;
 }
